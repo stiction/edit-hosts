@@ -1,0 +1,10 @@
+EditHosts: EditHosts.exe
+
+clean:
+	del EditHosts.exe EditHosts.obj
+
+EditHosts.exe: EditHosts.obj
+	link /NOLOGO EditHosts.obj Shell32.lib
+
+EditHosts.obj: EditHosts.cpp
+	cl /c /nologo /O1 EditHosts.cpp
